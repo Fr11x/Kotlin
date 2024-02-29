@@ -14,6 +14,43 @@ fun listePair(list: List<Int>): List<Int>{
     }
     return pair
 }
+
+fun listeImpair(list: List<Int>): List<Int>{
+    val impair = mutableListOf<Int>()
+    for (nb in list){
+        if (nb % 2 != 0) impair.add(nb)
+    }
+    return impair
+}
+fun listeDiviseurs(nb: Int): List<Int>{
+    val div = mutableListOf<Int>()
+    for (i in 1..nb){
+        if (nb % i == 0) div.add(i)
+    }
+    return  div
+}
+fun estPremier(arg: Int): Boolean{
+    val div = listeDiviseurs(arg)
+    if (div.size == 2) return true else return false
+}
+fun estParfait(arg: Int): Boolean{
+    val div = listeDiviseurs(arg)
+    div.removeLast()
+    println(div)
+    if (div.sum() == arg) return true else return false
+}
+fun sommeChiffre(arg: Int): Int{
+    var somme = 0
+    var nb = arg
+    while (nb > 0){
+        if (nb > 100){
+        somme += nb % 100
+        nb -100
+        }
+        else if ()
+    }
+    return somme
+}
 fun main() {
 //    val planetes = arrayOf(
 //        "mercure", "Venus", "terre", "Mars", "Jupiter", "saturne",
@@ -57,5 +94,5 @@ fun main() {
 //        if (moyenne >= 10) println(eleve.key)
 //
 //        }
-        println(listePair(20,14,15,17))
+        println(sommeChiffre(125))
     }
