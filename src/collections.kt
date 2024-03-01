@@ -39,17 +39,31 @@ fun estParfait(arg: Int): Boolean{
     println(div)
     if (div.sum() == arg) return true else return false
 }
+
 fun sommeChiffre(arg: Int): Int{
     var somme = 0
     var nb = arg
-    while (nb > 0){
-        if (nb > 100){
-        somme += nb % 100
-        nb -100
-        }
-        else if ()
+    while (nb != 0){
+        somme += nb % 10
+        nb /= 10
+
     }
     return somme
+}
+fun nombreAmi(nb1: Int, nb2: Int): Boolean = if (sommeChiffre(nb2) == sommeChiffre(nb1)) true else false
+
+fun tabParite(tab: Array<Int>): MutableMap<String,MutableList<Int>>{
+    val liste = mutableMapOf<String, MutableList<Int>>("pair" to mutableListOf(),
+        "impair" to mutableListOf())
+    for ( nb in tab ){
+        if ( nb % 2 == 0 ){
+            liste.getOrPut("pair") { mutableListOf() }.add(nb)
+        }
+        else {
+            liste.getOrPut("impair") { mutableListOf() }.add(nb)
+        }
+    }
+    return liste
 }
 fun main() {
 //    val planetes = arrayOf(
@@ -94,5 +108,6 @@ fun main() {
 //        if (moyenne >= 10) println(eleve.key)
 //
 //        }
-        println(sommeChiffre(125))
+//        println(sommeChiffre(125))
+        println(nombreAmi(66,93))
     }
