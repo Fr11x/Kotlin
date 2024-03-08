@@ -28,4 +28,14 @@ fun main() {
 //    println(loca1.pxkmSupplementaire())
 //    println(loca1.montantTotal())
 
+    var compte = Compte(50.0)
+    compte.retirer(20.0)
+    println(compte.getBalance())
+    compte.depose(15.5)
+    println(compte.getBalance())
+    compte.ajouterInteret(0.8)
+    println(compte.getBalance())
+
+
+
 }
