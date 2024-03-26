@@ -2,8 +2,18 @@ class Personne {
     var nom: String = ""
     var poids: Double = 0.0
     var taille: Double = 0.0
+    var adresse = Adresse()
 
     constructor() {
+    }
+
+
+
+    constructor(nom: String, poids: Double, taille: Double, adresse: Adresse) {
+        this.nom = nom
+        this.poids = poids
+        this.taille = taille
+        this.adresse = adresse
     }
 
     constructor(nom: String, poids: Double, taille: Double) {
@@ -11,6 +21,7 @@ class Personne {
         this.poids = poids
         this.taille = taille
     }
+
 
     fun imc(): Double = this.poids/(this.taille * this.taille)
 

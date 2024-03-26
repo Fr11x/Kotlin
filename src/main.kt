@@ -31,20 +31,35 @@ fun main() {
 //    var employe = Employe(1,"caca","pipi",2010,1500.0)
 //    employe.afficherEmployer()
 
-    var lesPersonne= mutableListOf<Personne>()
+    val lesPersonne= mutableListOf<Personne>()
     var cumultaille = 0.0
     var cumulpoids = 0.0
     lesPersonne.add(Personne("toto",85.5,1.85))
-    lesPersonne.add(Personne("titi",92.0,1.75))
-    lesPersonne.add(Personne("popo",80.0,1.74))
-    lesPersonne.add(Personne("titi",92.0,1.70))
-    lesPersonne.add(Personne("tata",110.0,1.95))
+    lesPersonne.add(Personne("titi",92.0,1.75, Adresse("28 rue jean claude","Sav","77240")))
+    lesPersonne.add(Personne("popo",80.0,1.74, Adresse("28 rue jean jaque","vert-saint-denis","77240")))
+    lesPersonne.add(Personne("titi",92.0,1.70, Adresse("26 rue jean pierre","Melun","77000")))
+    lesPersonne.add(Personne("tata",110.0,1.95, Adresse("28 rue jean jaque","Melun","77000")))
+    var tailleMax =lesPersonne.get(0).taille
+    var poidMin =lesPersonne.get(0).poids
+    val listeMelun = mutableListOf<String>()
     for (unePersonne in lesPersonne){
         cumultaille += unePersonne.taille
         cumulpoids += unePersonne.poids
+        if (unePersonne.taille > tailleMax){
+            tailleMax = unePersonne.taille
+        }
+        if (unePersonne.poids< poidMin){
+            poidMin = unePersonne.poids
+        }
+        if (unePersonne.adresse.codePostal == "77000"){
+            listeMelun.add(unePersonne.nom)
+        }
     }
-    println(cumultaille/lesPersonne.size)
-    println(cumulpoids/lesPersonne.size)
-    val list = emptyMap()
-    println(list)
+
+    println("taille maximale : $tailleMax")
+    println("poids le plus bas: $poidMin")
+    println("moyenne des tailles: ${cumultaille/lesPersonne.size}")
+    println("moyenne des poids: ${cumulpoids/lesPersonne.size}")
+    println("habitant de melun : $listeMelun")
+
 }
