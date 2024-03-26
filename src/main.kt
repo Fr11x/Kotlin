@@ -10,7 +10,7 @@ fun main() {
 //    println(v2.vitesse)
 
 
-//    val nb1 = Nombre(46)
+//  val nb1 = Nombre(46)
 //    val nb2 = Nombre(51)
 //    println(nb1.diviseurs())
 //    println(nb2.diviseurs())
@@ -21,21 +21,30 @@ fun main() {
 //    println(p1.imc())
 //    println(p1.significationImc())
 
-//    var loca1 = Location("Pierre","E",125.0,10.0)
-//    println(loca1.prixJour())
-//    println(loca1.montantLocation())
-//    println(loca1.kmSupplementaire())
-//    println(loca1.pxkmSupplementaire())
-//    println(loca1.montantTotal())
+////
+//    var prout = Location("Volvo","E",150.0,10.0)
+//    println(prout.montantLocation())
+//    println(prout.kmSupplementaire())
+//    println(prout.pxkmSupplementaire())
+//    println(prout.montantTotal())
+//
+//    var employe = Employe(1,"caca","pipi",2010,1500.0)
+//    employe.afficherEmployer()
 
-    var compte = Compte(50.0)
-    compte.retirer(20.0)
-    println(compte.getBalance())
-    compte.depose(15.5)
-    println(compte.getBalance())
-    compte.ajouterInteret(0.8)
-    println(compte.getBalance())
-
-
-
+    var lesPersonne= mutableListOf<Personne>()
+    var cumultaille = 0.0
+    var cumulpoids = 0.0
+    lesPersonne.add(Personne("toto",85.5,1.85))
+    lesPersonne.add(Personne("titi",92.0,1.75))
+    lesPersonne.add(Personne("popo",80.0,1.74))
+    lesPersonne.add(Personne("titi",92.0,1.70))
+    lesPersonne.add(Personne("tata",110.0,1.95))
+    for (unePersonne in lesPersonne){
+        cumultaille += unePersonne.taille
+        cumulpoids += unePersonne.poids
+    }
+    println(cumultaille/lesPersonne.size)
+    println(cumulpoids/lesPersonne.size)
+    val list = emptyMap()
+    println(list)
 }

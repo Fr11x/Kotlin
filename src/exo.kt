@@ -21,10 +21,11 @@ fun pairImpair(ent: Int) {
 fun mutliple(start: Int, end: Int){for (i in start..end step start)if (i <=end) println(i)}
 
 
-fun main(){
+fun main() {
     //println(bonjour("jean"))
     //println(entiers(5,5))
     //println(tarifReduit(35))
 //    println(produit(-2,2))
-//    println(pairImpair(9))
+//  println(pairImpair(9))
+    var prixTaille = 0.0
 }
